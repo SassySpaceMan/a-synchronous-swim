@@ -13,8 +13,13 @@ module.exports.initialize = (queue) => {
 };
 
 module.exports.router = (req, res, next = ()=>{}) => {
+  if(req.method==="GET"){
+    //respond with random swim command
+  }
+
   console.log('Serving request type ' + req.method + ' for url ' + req.url);
   res.writeHead(200, headers);
   res.end();
   next(); // invoke next() at the end of a request to help with testing!
 };
+

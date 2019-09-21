@@ -2,6 +2,10 @@
 
   const serverUrl = 'http://127.0.0.1:3000';
 
+  const sendRequest = new XMLHttpRequest();
+  sendRequest.open('GET', serverUrl)
+
+
   //
   // TODO: build the swim command fetcher here
   //
