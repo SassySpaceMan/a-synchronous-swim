@@ -2,11 +2,26 @@
 
   const serverUrl = 'http://127.0.0.1:3000';
 
-  const sendRequest = new XMLHttpRequest();
-  sendRequest.open('GET', serverUrl)
+  // const sendRequest = new XMLHttpRequest();
+  // sendRequest.open('GET', serverUrl)
 
 
   //
+  const ajaxFileRetrieve = () => {
+    $.ajax({
+      type: 'GET',
+      data: "eat my ass",
+      url: serverUrl,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: () => {
+        // reload the page
+        window.location = window.location.href;
+      }
+    });
+  };
+
   // TODO: build the swim command fetcher here
   //
 
@@ -15,13 +30,14 @@
   // Note: remember to fix the URL below.
   /////////////////////////////////////////////////////////////////////
 
+
   const ajaxFileUplaod = (file) => {
     var formData = new FormData();
     formData.append('file', file);
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: serverUrl,
       cache: false,
       contentType: false,
       processData: false,
